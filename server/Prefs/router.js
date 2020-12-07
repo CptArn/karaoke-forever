@@ -8,9 +8,9 @@ const Prefs = require('./Prefs')
 
 // start media scan
 router.get('/scan', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   ctx.status = 200
   ctx.startScanner()
@@ -45,9 +45,9 @@ router.get('/', async (ctx, next) => {
 router.post('/path', async (ctx, next) => {
   const dir = decodeURIComponent(ctx.query.dir)
 
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   // required
   if (!dir) {
@@ -65,9 +65,9 @@ router.post('/path', async (ctx, next) => {
 
 // remove media file path
 router.delete('/path/:pathId', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const pathId = parseInt(ctx.params.pathId, 10)
 
@@ -86,9 +86,9 @@ router.delete('/path/:pathId', async (ctx, next) => {
 
 // get folder listing for path browser
 router.get('/path/ls', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const dir = decodeURIComponent(ctx.query.dir)
 

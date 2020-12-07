@@ -85,7 +85,7 @@ async function serverWorker ({ env, startScanner, stopScanner }) {
         userId: null,
         username: null,
         name: null,
-        isAdmin: false,
+        isAdmin: true,
         roomId: null,
       }
     }

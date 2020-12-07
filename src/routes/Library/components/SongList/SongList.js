@@ -9,7 +9,7 @@ const SongList = (props) => props.songIds.map(songId => (
     filterKeywords={props.filterKeywords}
     isQueued={props.queuedSongs.includes(songId)}
     isStarred={props.starredSongs.includes(songId)}
-    isAdmin={props.isAdmin}
+    isAdmin={true}
     key={songId}
     numStars={props.starredSongCounts[songId] || 0}
     onSongQueue={props.queueSong}

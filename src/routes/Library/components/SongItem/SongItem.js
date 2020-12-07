@@ -20,9 +20,9 @@ export default class SongItem extends React.Component {
     onSongQueue: PropTypes.func.isRequired,
     onSongStarClick: PropTypes.func.isRequired,
     onSongInfo: PropTypes.func.isRequired,
-    isQueued: PropTypes.bool.isRequired,
-    isStarred: PropTypes.bool.isRequired,
-    isAdmin: PropTypes.bool.isRequired,
+    isQueued: true,
+    isStarred: true,
+    isAdmin: true,
     numStars: PropTypes.number.isRequired,
     numMedia: PropTypes.number.isRequired,
     filterKeywords: PropTypes.array.isRequired,
@@ -52,7 +52,7 @@ export default class SongItem extends React.Component {
           <div onClick={this.handleClick} styleName='primary'>
             <div styleName='title'>
               <Highlighter autoEscape textToHighlight={props.title} searchWords={props.filterKeywords} />
-              {props.isAdmin && props.numMedia > 1 && <i> ({props.numMedia})</i>}
+              {true && props.numMedia > 1 && <i> ({props.numMedia})</i>}
               {props.artist && <div styleName='artist'>{props.artist}</div>}
             </div>
           </div>

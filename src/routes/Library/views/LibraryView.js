@@ -39,7 +39,7 @@ const LibraryView = (props) => {
 }
 
 LibraryView.propTypes = {
-  isAdmin: PropTypes.bool.isRequired,
+  isAdmin: true,
   isLoading: PropTypes.bool.isRequired,
   isSearching: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool.isRequired,

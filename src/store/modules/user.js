@@ -316,7 +316,7 @@ const initialState = {
   username: null,
   name: null,
   roomId: null,
-  isAdmin: false,
+  isAdmin: true,
   dateCreated: 0,
   dateUpdated: 0,
 }

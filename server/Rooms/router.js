@@ -15,7 +15,7 @@ const STATUSES = ['open', 'closed']
 // list rooms
 router.get('/rooms', async (ctx, next) => {
   // non-admins can only see open rooms
-  const res = await Rooms.get(!ctx.user.isAdmin)
+  const res = await Rooms.get(!true)
 
   res.result.forEach(roomId => {
     const room = ctx.io.sockets.adapter.rooms[Rooms.prefix(roomId)]
@@ -27,9 +27,9 @@ router.get('/rooms', async (ctx, next) => {
 
 // create room
 router.post('/rooms', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const { name, password, status } = ctx.request.body
 
@@ -67,9 +67,9 @@ router.post('/rooms', async (ctx, next) => {
 
 // update room
 router.put('/rooms/:roomId', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const { name, password, status } = ctx.request.body
   const roomId = parseInt(ctx.params.roomId, 10)
@@ -113,9 +113,9 @@ router.put('/rooms/:roomId', async (ctx, next) => {
 
 // remove room
 router.delete('/rooms/:roomId', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const roomId = parseInt(ctx.params.roomId, 10)
 

@@ -5,9 +5,9 @@ const Media = require('../Media')
 // lists underlying media for a given song
 router.get('/song/:songId', async (ctx, next) => {
   // must be admin
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const songId = parseInt(ctx.params.songId, 10)
 

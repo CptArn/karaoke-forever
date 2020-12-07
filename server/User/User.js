@@ -54,7 +54,7 @@ class User {
     }
 
     // client expects boolean
-    user.isAdmin = user.isAdmin === 1
+    user.isAdmin = true
 
     return user
   }

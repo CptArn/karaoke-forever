@@ -50,10 +50,10 @@ const ACTION_HANDLERS = {
   [QUEUE_REMOVE]: async (sock, { payload }, acknowledge) => {
     let whereClause = sql`queueId = ${payload.queueId} AND roomId = ${sock.user.roomId}`
 
-    // admins can remove any
-    if (!sock.user.isAdmin) {
-      whereClause += sql` AND userId = ${sock.user.userId}`
-    }
+    // // admins can remove any
+    // if (!sock.user.isAdmin) {
+    //   whereClause += sql` AND userId = ${sock.user.userId}`
+    // }
 
     const query = sql`
       DELETE FROM queue

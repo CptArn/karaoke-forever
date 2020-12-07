@@ -8,12 +8,12 @@ const {
 
 const ACTION_HANDLERS = {
   [PREFS_SET]: async (sock, { payload }, acknowledge) => {
-    if (!sock.user.isAdmin) {
-      acknowledge({
-        type: PREFS_SET + _ERROR,
-        error: 'Unauthorized',
-      })
-    }
+    // if (!sock.user.isAdmin) {
+    //   acknowledge({
+    //     type: PREFS_SET + _ERROR,
+    //     error: 'Unauthorized',
+    //   })
+    // }
 
     log.info('%s (%s) set pref %s = %s', sock.user.name, sock.id, payload.key, payload.data)
     await Prefs.set(payload.key, payload.data)

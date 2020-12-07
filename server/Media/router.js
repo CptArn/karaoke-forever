@@ -20,9 +20,9 @@ const {
 router.get('/:mediaId', async (ctx, next) => {
   const { type } = ctx.query
 
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const mediaId = parseInt(ctx.params.mediaId, 10)
 
@@ -68,9 +68,9 @@ router.get('/:mediaId', async (ctx, next) => {
 
 // set isPreferred flag
 router.all('/:mediaId/prefer', async (ctx, next) => {
-  if (!ctx.user.isAdmin) {
-    ctx.throw(401)
-  }
+  // if (!ctx.user.isAdmin) {
+  //   ctx.throw(401)
+  // }
 
   const mediaId = parseInt(ctx.params.mediaId, 10)
 

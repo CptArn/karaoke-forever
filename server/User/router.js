@@ -228,7 +228,7 @@ router.get('/user/image/:userId', async (ctx, next) => {
 
 module.exports = router
 
-async function _create (ctx, isAdmin = 0) {
+async function _create (ctx, isAdmin = 1) {
   let { name, username, newPassword, newPasswordConfirm } = ctx.request.body
 
   if (!username || !name || !newPassword || !newPasswordConfirm) {
@@ -264,7 +264,7 @@ async function _create (ctx, isAdmin = 0) {
   fields.set('password', await bcrypt.hash(newPassword, BCRYPT_ROUNDS))
   fields.set('name', name)
   fields.set('dateCreated', Math.floor(Date.now() / 1000))
-  fields.set('isAdmin', isAdmin)
+  fields.set('isAdmin', true)
 
   // user image?
   if (ctx.request.files.image) {
@@ -327,7 +327,7 @@ async function _login (ctx, creds, validateRoomPassword = true) {
   // encrypt JWT based on subset of user object
   const token = jwtSign({
     userId: user.userId,
-    isAdmin: user.isAdmin,
+    isAdmin: true,
     name: user.name,
     roomId: user.roomId,
   }, ctx.jwtKey)
