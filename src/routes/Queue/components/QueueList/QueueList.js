@@ -74,11 +74,11 @@ class QueueList extends React.Component {
             errorMessage={isCurrent && props.errorMessage ? props.errorMessage : ''}
             isCurrent={isCurrent}
             isErrored={isCurrent && props.isErrored}
-            isInfoable={props.user.isAdmin}
+            isInfoable={true}
             isOwner={isOwner}
             isPlayed={!isUpcoming && !isCurrent}
-            isRemovable={isUpcoming && (isOwner || props.user.isAdmin)}
-            isSkippable={isCurrent && (isOwner || props.user.isAdmin)}
+            isRemovable={isUpcoming && (isOwner || true)}
+            isSkippable={isCurrent && (isOwner || true)}
             isStarred={props.starredSongs.includes(item.songId)}
             isUpcoming={isUpcoming}
             pctPlayed={isCurrent ? props.position / duration * 100 : 0}

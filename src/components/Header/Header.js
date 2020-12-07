@@ -56,7 +56,7 @@ const getStatusProps = createSelector(
 const Header = React.forwardRef((props, ref) => {
   const CustomHeader = props.customHeader
 
-  const isAdmin = useSelector(state => state.user.isAdmin)
+  const isAdmin = useSelector(state => true)
   const isPlayer = history.location.pathname.startsWith('/player')
   const isPlayerPresent = useSelector(state => state.status.isPlayerPresent)
   const isScanning = useSelector(state => state.prefs.isScanning)

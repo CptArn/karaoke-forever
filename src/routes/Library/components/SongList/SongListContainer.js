@@ -7,7 +7,7 @@ import { showSongInfo } from 'store/modules/songInfo'
 
 const mapStateToProps = (state, props) => ({
   artists: state.artists.entities,
-  isAdmin: state.user.isAdmin,
+  isAdmin: true,
   songs: state.songs.entities,
   starredSongs: ensureState(state.userStars).starredSongs,
   starredSongCounts: state.starCounts.songs,
